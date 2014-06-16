@@ -52,6 +52,13 @@ return array(
 			'prefix'   => '',
 		),
 
+        $url = parse_url(getenv("CLEARDB_DATABASE_URL")),
+
+        $host = $url["host"],
+        $username = $url["user"],
+        $password = $url["pass"],
+        $database = substr($url["path"], 1),
+
 		'mysql' => array(
             'driver'    => 'mysql',
             'host'      => $host,
@@ -122,9 +129,3 @@ return array(
 	),
 
 );
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
