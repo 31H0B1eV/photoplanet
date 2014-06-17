@@ -69,8 +69,8 @@ return array(
 //            'database'  => 'photoplanet',
 //            'username'  => 'homestead',
 //            'password'  => 'secret',
-//            'charset'   => 'utf8',
-//            'collation' => 'utf8_unicode_ci',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
 		),
 
