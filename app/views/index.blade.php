@@ -47,24 +47,7 @@
 
     </div>
 
-    <div class="row">
-
-        <div class="col-lg-7 col-md-7">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-lg-5 col-md-5">
-            <h3>Project One</h3>
-            <h4>Subheading</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-            <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-
-    </div>
-
-    <hr>
+    @foreach ($article as $art)
 
     <div class="row">
 
@@ -75,9 +58,9 @@
         </div>
 
         <div class="col-lg-5 col-md-5">
-            <h3>Project Two</h3>
-            <h4>Subheading</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+            <h3>{{ $art['title'] }}</h3>
+            <h4>{{ $art['description'] }}</h4>
+            <p>{{ $art['content'] }}</p>
             <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
 
@@ -85,62 +68,8 @@
 
     <hr>
 
-    <div class="row">
 
-        <div class="col-lg-7 col-md-7">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-lg-5 col-md-5">
-            <h3>Project Three</h3>
-            <h4>Subheading</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-            <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-
-    </div>
-
-    <hr>
-
-    <div class="row">
-
-        <div class="col-lg-7 col-md-7">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-lg-5 col-md-5">
-            <h3>Project Four</h3>
-            <h4>Subheading</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-            <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-
-    </div>
-
-    <hr>
-
-    <div class="row">
-
-        <div class="col-lg-7 col-md-7">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-lg-5 col-md-5">
-            <h3>Project Five</h3>
-            <h4>Subheading</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-            <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-
-    </div>
-
-    <hr>
+    @endforeach
 
     <div class="row text-center">
 

@@ -5,8 +5,8 @@
  * If you want to keep the Angular syntax default, then use this method.
  * Change the Laravel Blade Tags:
  */
-Blade::setContentTags('<%', '%>'); 		// for variables and all things Blade
-Blade::setEscapedContentTags('<%%', '%%>'); 	// for escaped data
+/*Blade::setContentTags('<%', '%>'); 		// for variables and all things Blade
+Blade::setEscapedContentTags('<%%', '%%>'); 	// for escaped data*/
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,4 @@ Blade::setEscapedContentTags('<%%', '%%>'); 	// for escaped data
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', 'HomeController@index');
