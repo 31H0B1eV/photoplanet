@@ -27,10 +27,9 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
     'local' => array('homestead'),
-    'production' => array('localhost.localdomain')
+    'production' => array('http://floating-beyond-9485.herokuapp.com/'),
 
 ));
-
 /*
 |--------------------------------------------------------------------------
 | Bind Paths

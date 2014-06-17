@@ -15,7 +15,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://startbootstrap.com">Start Bootstrap</a>
+            <a class="navbar-brand" href="/">Start Bootstrap</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,9 +31,10 @@
         </div>
         <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
+
 </nav>
 
+<!-- /.container -->
 <div class="container">
 
     <div class="row">
