@@ -12,6 +12,8 @@ class Article extends Eloquent {
 
     public static function show()
     {
-        return Article::all();
+        $article = Article::where('id', '<', 1000000)->paginate(5);
+
+        return $article;
     }
 } 
