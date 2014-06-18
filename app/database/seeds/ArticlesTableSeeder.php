@@ -53,6 +53,24 @@ class ArticlesTableSeeder  extends Seeder {
             'description' => 'Kyka Racha articles',
             'content'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.'
         ]);
+
+        Article::create([
+            'title'       => 'Mama Mia',
+            'description' => 'Mama Mia articles',
+            'content'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.'
+        ]);
+
+        Article::create([
+            'title'       => 'Tumba Umba',
+            'description' => 'Tumba Umba articles',
+            'content'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.'
+        ]);
+
+        Article::create([
+            'title'       => 'James Bond',
+            'description' => 'James Bond articles',
+            'content'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.'
+        ]);
     }
 
 } 

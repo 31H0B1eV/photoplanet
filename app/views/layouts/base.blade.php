@@ -34,8 +34,6 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
             <script>
 
-                $('#ajaxContent').load('http://www.example.com/paginated/data');
-
                 $('.pagination a').on('click', function (event) {
                     event.preventDefault();
                     if ( $(this).attr('href') != '#' ) {
