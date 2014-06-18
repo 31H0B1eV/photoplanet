@@ -10,7 +10,7 @@ Photo Planet | Popular
 </div>
 <div class="container">
 
-    <div class="row">
+    <div class="row-fluid">
 
         <div class="col-lg-12">
 
@@ -18,7 +18,11 @@ Photo Planet | Popular
                 @if( $value['images']['standard_resolution']['url'] != '')
                 <div class="row">
 
-                    <div class="col-lg-7 col-md-7">
+                    <div class="col-lg-1 col-md-1">
+                        &nbsp
+                    </div>
+
+                    <div class="col-lg-5 col-md-5">
                         <a href="#" class="thumbnail">
                             <img src="<% $value['images']['standard_resolution']['url'] %>" class="img-responsive">
                         </a>
@@ -29,6 +33,10 @@ Photo Planet | Popular
                         <img src="<% $value['user']['profile_picture'] %>" class="img-circle"><br />&nbsp
                         <p class="bg-info">Here must be comments from instagram</p>
                         <a class="glyphicon glyphicon-heart" href="#">&nbspLike it <!--<span class="glyphicon glyphicon-chevron-right"></span>--></a>
+                    </div>
+
+                    <div class="col-lg-1 col-md-1">
+                        &nbsp
                     </div>
                 </div>
                 @endif
