@@ -38,13 +38,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Start Bootstrap</a>
+            <a class="navbar-brand" href="/">Most Popular Picture</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
             <ul class="nav navbar-nav">
-                <li><a href="/popular">Most Popular</a>
+                <li><a href="#popular">About</a>
                 </li>
                 <li><a href="#services">Services</a>
                 </li>

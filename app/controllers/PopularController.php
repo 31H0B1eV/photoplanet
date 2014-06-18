@@ -14,6 +14,6 @@ class PopularController extends BaseController {
 
         $result = $response->json();
 
-        return View::make('popular', compact('result'));
+        return View::make('popular', ['result' => $result['data']]);
     }
 } 
