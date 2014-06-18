@@ -12,6 +12,8 @@ class Article extends Eloquent {
 
     public static function show()
     {
-        return Article::all();
+        $article = Article::paginate(3);
+
+        return $article;
     }
 } 

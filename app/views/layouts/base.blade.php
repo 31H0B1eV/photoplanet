@@ -30,7 +30,20 @@
 <body>
             @yield('content')
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+            <script>
+
+                $('.pagination a').on('click', function (event) {
+                    event.preventDefault();
+                    if ( $(this).attr('href') != '#' ) {
+                        $("html, body").animate({ scrollTop: 0 }, "fast");
+                        $('#ajaxContent').load($(this).attr('href'));
+                    }
+                });
+
+            </script>
+
+</body>
 </body>
 </html>

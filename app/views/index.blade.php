@@ -35,7 +35,7 @@
 </nav>
 
 <!-- /.container -->
-<div class="container">
+<div class="container" id="ajaxContent">
 
     <div class="row">
 
@@ -58,9 +58,9 @@
         </div>
 
         <div class="col-lg-5 col-md-5">
-            <h3>{{ $art['title'] }}</h3>
-            <h4>{{ $art['description'] }}</h4>
-            <p>{{ $art['content'] }}</p>
+            <h3><% $art['title'] %></h3>
+            <h4><% $art['description'] %></h4>
+            <p><% $art['content'] %></p>
             <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
 
@@ -68,28 +68,12 @@
 
     <hr>
 
-
     @endforeach
 
     <div class="row text-center">
 
         <div class="col-lg-12">
-            <ul class="pagination">
-                <li><a href="#">&laquo;</a>
-                </li>
-                <li class="active"><a href="#">1</a>
-                </li>
-                <li><a href="#">2</a>
-                </li>
-                <li><a href="#">3</a>
-                </li>
-                <li><a href="#">4</a>
-                </li>
-                <li><a href="#">5</a>
-                </li>
-                <li><a href="#">&raquo;</a>
-                </li>
-            </ul>
+            <% $article->links() %>
         </div>
 
     </div>
