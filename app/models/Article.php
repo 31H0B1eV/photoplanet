@@ -12,7 +12,7 @@ class Article extends Eloquent {
 
     public static function show()
     {
-        $article = Article::where('id', '<', 1000000)->paginate(5);
+        $article = Article::paginate(3);
 
         return $article;
     }
