@@ -1,7 +1,7 @@
 <?php
 
 
-interface Helper {
+class Helper {
 
     const CLIENT_ID = 'cc217dda7dda45178e1a83594eb7db8e';
     const CLIENT_SECRET = '8458182fea814756bfad6e77a4bd26a5';
