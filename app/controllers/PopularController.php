@@ -37,21 +37,21 @@ class PopularController extends BaseController {
 
     public function login()
     {
-        header("Location: https://instagram.com/oauth/authorize/?client_id=cc217dda7dda45178e1a83594eb7db8e&redirect_uri=http://photoplanet.dev:8000/&response_type=code");
+        header(
+"Location: https://instagram.com/oauth/authorize/?client_id=cc217dda7dda45178e1a83594eb7db8e&redirect_uri=http://photoplanet.dev:8000/&response_type=code"
+        );
         exit;
     }
 
     public function show()
     {
-        if(isset($_GET['code'])) {
+        if(!isset($_COOKIE['instagram_access_token']) and isset($_GET['code'])) {
+
             $access_token = $this->getAccessToken($_GET['code']);
 
             $access_token = json_decode($access_token);
 
-            if(!isset($_COOKIE['instagram_access_token']))
-                setcookie('instagram_access_token', $access_token->access_token);
-
-//            dd($access_token);
+            setcookie('instagram_access_token', $access_token->access_token);
         }
 
         $client = new Guzzle\Service\Client('https://api.instagram.com/');
