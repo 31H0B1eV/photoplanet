@@ -14,8 +14,8 @@ Photo Planet | Popular
 
         <div class="col-lg-12">
 
-            @if(isset($current_user))
-                <% dd($current_user) %>
+            @if(isset($user))
+                <% dd($user) %>
             @endif
 
             @foreach($result as $key=>$value)

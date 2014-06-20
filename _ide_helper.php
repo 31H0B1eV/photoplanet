@@ -8488,12 +8488,12 @@ namespace {
 		 * @param string|array  $view
 		 * @param array  $data
 		 * @param Closure|string  $callback
-		 * @return int
+		 * @return void
 		 * @static 
 		 */
 		 public static function send($view, $data, $callback){
 			//Method inherited from \Illuminate\Mail\Mailer
-			return \Illuminate\Mail\Mailer::send($view, $data, $callback);
+			 \Illuminate\Mail\Mailer::send($view, $data, $callback);
 		 }
 
 		/**
@@ -8581,6 +8581,17 @@ namespace {
 		 public static function pretend($value = true){
 			//Method inherited from \Illuminate\Mail\Mailer
 			 \Illuminate\Mail\Mailer::pretend($value);
+		 }
+
+		/**
+		 * Check if the mailer is pretending to send messages.
+		 *
+		 * @return bool
+		 * @static 
+		 */
+		 public static function isPretending(){
+			//Method inherited from \Illuminate\Mail\Mailer
+			return \Illuminate\Mail\Mailer::isPretending();
 		 }
 
 		/**
@@ -13122,6 +13133,50 @@ namespace {
 		 public static function getNames(){
 			//Method inherited from \Illuminate\View\Factory
 			return \Illuminate\View\Factory::getNames();
+		 }
+
+	}
+	class Instagram extends \Elevencodes\InstagramLaravel\Facades\InstagramLaravel{
+		/**
+		 * Constructor
+		 *
+		 * @param array $config Configuration array
+		 * @param \Instagram\Net\ClientInterface $client Client object used to connect to the API
+		 * @access public
+		 * @static 
+		 */
+		 public static function __construct($config = null, $client = null){
+			//Method inherited from \Instagram\Auth
+			 \Instagram\Auth::__construct($config, $client);
+		 }
+
+		/**
+		 * Authorize
+		 * 
+		 * Redirects the user to the Instagram authorization url
+		 *
+		 * @access public
+		 * @static 
+		 */
+		 public static function authorize(){
+			//Method inherited from \Instagram\Auth
+			 \Instagram\Auth::authorize();
+		 }
+
+		/**
+		 * Get the access token
+		 * 
+		 * POSTs to the Instagram API and obtains and access key
+		 *
+		 * @param string $code Code supplied by Instagram
+		 * @return string Returns the access token
+		 * @throws \Instagram\Core\ApiException
+		 * @access public
+		 * @static 
+		 */
+		 public static function getAccessToken($code){
+			//Method inherited from \Instagram\Auth
+			return \Instagram\Auth::getAccessToken($code);
 		 }
 
 	}

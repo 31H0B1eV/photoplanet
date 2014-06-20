@@ -50,12 +50,7 @@ class PopularController extends BaseController {
 //        $auth_token = json_decode($json_auth_token);
 //
 //        return $auth_token;
-//    }
-
-    public function login()
-    {
-        return "<a href='/'>back</a>";
-    }
+//    }turn "<a href='/'>back</a>";
 
     public function show()
     {
