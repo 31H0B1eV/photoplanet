@@ -24,75 +24,48 @@ class PopularController extends BaseController {
         'scope'         => array('likes', 'comments', 'relationships')
     );
 
-    public function getAccessToken($code)
-    {
-        $apiData = array(
-            'client_id'       => $this->auth_config['client_id'],
-            'client_secret'   => $this->auth_config['client_secret'],
-            'grant_type'      => 'authorization_code',
-            'redirect_uri'    => $this->auth_config['redirect_uri'],
-            'code'            => $code
-        );
-
-        $apiHost = 'https://api.instagram.com/oauth/access_token';
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $apiHost);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($apiData));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $jsonData = curl_exec($ch);
-        curl_close($ch);
-
-        return $jsonData;
-    }
-
-    public function auth()
-    {
-        $auth = new Instagram\Auth( $this->auth_config );
-
-        if(!isset($_GET['code'])) {
-
-            $auth->authorize();
-
-        } else {
-
-            Session::put('instagram_access_token', $auth->getAccessToken( $_GET['code'] ));
-        }
-        Session::put('instagram_access_token', $auth->getAccessToken( $_GET['code'] ));
-    }
+//    public function getAccessToken($code)
+//    {
+//        $apiData = array(
+//            'client_id'       => $this->auth_config['client_id'],
+//            'client_secret'   => $this->auth_config['client_secret'],
+//            'grant_type'      => 'authorization_code',
+//            'redirect_uri'    => $this->auth_config['redirect_uri'],
+//            'code'            => $code
+//        );
+//
+//        $apiHost = 'https://api.instagram.com/oauth/access_token';
+//
+//        $ch = curl_init();
+//        curl_setopt($ch, CURLOPT_URL, $apiHost);
+//        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($apiData));
+//        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//        $jsonData = curl_exec($ch);
+//        curl_close($ch);
+//
+//        $json_auth_token = $this->getAccessToken($_GET['code']);
+//
+//        $auth_token = json_decode($json_auth_token);
+//
+//        return $auth_token;
+//    }
 
     public function login()
     {
-        $this->auth();
-
-        $this->show();
+        return "<a href='/'>back</a>";
     }
 
     public function show()
     {
-        if(!isset($_GET['code'])) {
-            $client = new Guzzle\Service\Client('https://api.instagram.com/');
+        $client = new Guzzle\Service\Client('https://api.instagram.com/');
 
-            $response = $client->get("v1/media/popular?client_id=".Helper::CLIENT_ID)->send();
+        $response = $client->get("v1/media/popular?client_id=".Helper::CLIENT_ID)->send();
 
-            $result = $response->json();
+        $result = $response->json();
 
-            return View::make('popular', ['result' => $result['data']/*, 'current_user' => $current_user*/]);
-        }
-
-        $instagram = new Instagram\Instagram;
-
-        $json_auth_token = $this->getAccessToken($_GET['code']);
-
-        $auth_token = json_decode($json_auth_token);
-
-        $instagram->setAccessToken($auth_token->access_token);
-
-        $current_user = $instagram->getCurrentUser();
-
-        return View::make('popular', [/*'result' => $result['data'], */'current_user' => $current_user]);
+        return View::make('popular', ['result' => $result['data']]);
 
 
     }
