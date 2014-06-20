@@ -48,7 +48,12 @@
 <!--                </li>-->
 <!--                <li><a href="#services">Services</a>-->
 <!--                </li>-->
-                <li><a href="/login">Login</a>
+                @if(!isset($_COOKIE['instagram_access_token']))
+                    <li><a href="/login">Login</a>
+                @endif
+                @if(isset($_COOKIE['instagram_access_token']))
+                    <li><a href="/logout">Logout</a>
+                @endif
                 </li>
             </ul>
         </div>

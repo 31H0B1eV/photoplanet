@@ -14,8 +14,21 @@ Photo Planet | Popular
 
         <div class="col-lg-12">
 
-            @if(isset($user))
-                <% dd($user) %>
+<!--            object(stdClass)[146]-->
+<!--            public 'username' => string 'artemzinoviev' (length=13)-->
+<!--            public 'bio' => string '' (length=0)-->
+<!--            public 'website' => string '' (length=0)-->
+<!--            public 'profile_picture' => string 'http://images.ak.instagram.com/profiles/profile_644521835_75sq_1392765666.jpg' (length=77)-->
+<!--            public 'full_name' => string 'Artem' (length=5)-->
+<!--            public 'counts' =>-->
+<!--            object(stdClass)[152]-->
+<!--            public 'media' => int 0-->
+<!--            public 'followed_by' => int 1-->
+<!--            public 'follows' => int 11-->
+<!--            public 'id' => string '644521835' (length=9)-->
+
+            @if(isset($current_user))
+                <h3 class="header pull-right">User Name is <small><% $current_user->username %></small></h3>
             @endif
 
             @foreach($result as $key=>$value)
