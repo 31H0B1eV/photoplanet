@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a2cf9abfd654b0c4ba9d0af06b31f22a",
+    "hash": "4f52dbe8cefb3138daed866af18e4264",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -672,6 +672,59 @@
             "time": "2013-01-12 18:59:04"
         },
         {
+            "name": "elevencodes/instagram-laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fortybytes/instagram-laravel.git",
+                "reference": "85fb4f2a824f37abc37cda9caa17766517eca2ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fortybytes/instagram-laravel/zipball/85fb4f2a824f37abc37cda9caa17766517eca2ca",
+                "reference": "85fb4f2a824f37abc37cda9caa17766517eca2ca",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=4.0,<4.3",
+                "php": ">=5.3.0",
+                "php-instagram-api/php-instagram-api": "dev-master"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.8.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "frameworks": [
+                    "Laravel 4"
+                ]
+            },
+            "autoload": {
+                "psr-0": {
+                    "Elevencodes\\InstagramLaravel": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sumardi Shukor",
+                    "email": "me@sumardi.net"
+                }
+            ],
+            "description": "Instagram Service Provider for Laravel 4",
+            "keywords": [
+                "Laravel 4",
+                "instagram",
+                "laravel"
+            ],
+            "time": "2014-06-20 07:39:34"
+        },
+        {
             "name": "filp/whoops",
             "version": "1.1.1",
             "source": {
@@ -822,124 +875,6 @@
             "time": "2014-01-28 22:29:15"
         },
         {
-            "name": "guzzlehttp/guzzle",
-            "version": "4.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "577a69ff7d0a24e9576a2885c3a7afbaadd51ec1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/577a69ff7d0a24e9576a2885c3a7afbaadd51ec1",
-                "reference": "577a69ff7d0a24e9576a2885c3a7afbaadd51ec1",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "guzzlehttp/streams": "~1.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "ext-curl": "*",
-                "phpunit/phpunit": "~4.0",
-                "psr/log": "~1.0"
-            },
-            "suggest": {
-                "ext-curl": "Guzzle will use specific adapters if cURL is present"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "client",
-                "curl",
-                "framework",
-                "http",
-                "http client",
-                "rest",
-                "web service"
-            ],
-            "time": "2014-06-08 20:00:20"
-        },
-        {
-            "name": "guzzlehttp/streams",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/streams.git",
-                "reference": "cf0c8c33ca95cc147efba4c714f630ee44767180"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/streams/zipball/cf0c8c33ca95cc147efba4c714f630ee44767180",
-                "reference": "cf0c8c33ca95cc147efba4c714f630ee44767180",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Stream\\": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Provides a simple abstraction over streams of data (Guzzle 4+)",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "Guzzle",
-                "stream"
-            ],
-            "time": "2014-04-03 04:48:24"
-        },
-        {
             "name": "ircmaxell/password-compat",
             "version": "1.0.3",
             "source": {
@@ -1028,16 +963,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0efc0c962f28c9b5f3ce2da899c7a08a9471b5b1"
+                "reference": "ee370ac91ee0a51303765c870e139b1ecd1e222c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0efc0c962f28c9b5f3ce2da899c7a08a9471b5b1",
-                "reference": "0efc0c962f28c9b5f3ce2da899c7a08a9471b5b1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ee370ac91ee0a51303765c870e139b1ecd1e222c",
+                "reference": "ee370ac91ee0a51303765c870e139b1ecd1e222c",
                 "shasum": ""
             },
             "require": {
@@ -1141,7 +1076,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-06-11 21:33:06"
+            "time": "2014-06-18 05:07:22"
         },
         {
             "name": "monolog/monolog",
@@ -1303,16 +1238,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.23",
+            "version": "v1.1.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "c1edbc82aed49ff2bdef0a0f659bf69e3f7b14cc"
+                "reference": "40f552c019956f446553b19f7de2da2f9c74d730"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/c1edbc82aed49ff2bdef0a0f659bf69e3f7b14cc",
-                "reference": "c1edbc82aed49ff2bdef0a0f659bf69e3f7b14cc",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/40f552c019956f446553b19f7de2da2f9c74d730",
+                "reference": "40f552c019956f446553b19f7de2da2f9c74d730",
                 "shasum": ""
             },
             "require": {
@@ -1350,7 +1285,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2014-05-22 13:59:09"
+            "time": "2014-06-17 08:23:06"
         },
         {
             "name": "php-instagram-api/php-instagram-api",
@@ -2588,7 +2523,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "barryvdh/laravel-ide-helper": 20,
-        "php-instagram-api/php-instagram-api": 20
+        "php-instagram-api/php-instagram-api": 20,
+        "elevencodes/instagram-laravel": 20
     },
     "platform": [
 

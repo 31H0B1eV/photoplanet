@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Elevencodes\InstagramLaravel\InstagramLaravelServiceProvider',
 
 	),
 
@@ -190,6 +191,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+        'Instagram'       => 'Elevencodes\InstagramLaravel\Facades\InstagramLaravel',
 
 	),
 

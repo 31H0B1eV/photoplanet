@@ -14,6 +14,10 @@ Photo Planet | Popular
 
         <div class="col-lg-12">
 
+            @if(isset($user))
+                <% dd($user) %>
+            @endif
+
             @foreach($result as $key=>$value)
                 @if( $value['images']['standard_resolution']['url'] != '')
                 <div class="row">
