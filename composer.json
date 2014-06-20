@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "barryvdh/laravel-ide-helper": "dev-master"
+        "barryvdh/laravel-ide-helper": "dev-master",
+		"php-instagram-api/php-instagram-api": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

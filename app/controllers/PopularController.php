@@ -43,6 +43,23 @@ class PopularController extends BaseController {
         exit;
     }
 
+    public function get_current_user()
+    {
+
+        if(isset($_COOKIE['instagram_access_token'])) {
+
+            $instagram = new Instagram\Instagram;
+            $instagram->setAccessToken($_COOKIE['instagram_access_token']);
+
+            $current_user = $instagram->getCurrentUser()->getData();
+
+            return $current_user;
+        } else {
+            throw new Exception('ERROR in get_current_user() method');
+        }
+
+    }
+
     public function show()
     {
         if(!isset($_COOKIE['instagram_access_token']) and isset($_GET['code'])) {
@@ -52,6 +69,7 @@ class PopularController extends BaseController {
             $access_token = json_decode($access_token);
 
             setcookie('instagram_access_token', $access_token->access_token);
+            $_COOKIE['instagram_access_token'] = $access_token->access_token;
         }
 
         $client = new Guzzle\Service\Client('https://api.instagram.com/');
@@ -60,8 +78,7 @@ class PopularController extends BaseController {
 
         $result = $response->json();
 
-        return View::make('popular', ['result' => $result['data']]);
-
-
+        return View::make('popular', ['result' => $result['data'],
+            'current_user' => isset($_COOKIE['instagram_access_token']) ? $this->get_current_user() : null]);
     }
 } 
