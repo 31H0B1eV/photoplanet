@@ -17,40 +17,83 @@ class PopularController extends BaseController {
      * "full_name":"Artem","id":"644521835"}}%
      */
 
-    public $auth_config = array(
+    protected $auth_config = array(
         'client_id'     => Helper::CLIENT_ID,
         'client_secret' => Helper::CLIENT_SECRET,
         'redirect_uri'  => Helper::REDIRECT_URI,
         'scope'         => array('likes', 'comments', 'relationships')
     );
 
-    public function show()
+    public function getAccessToken($code)
     {
+        $apiData = array(
+            'client_id'       => $this->auth_config['client_id'],
+            'client_secret'   => $this->auth_config['client_secret'],
+            'grant_type'      => 'authorization_code',
+            'redirect_uri'    => $this->auth_config['redirect_uri'],
+            'code'            => $code
+        );
 
-        $client = new Guzzle\Service\Client('https://api.instagram.com/');
+        $apiHost = 'https://api.instagram.com/oauth/access_token';
 
-        $response = $client->get("v1/media/popular?client_id=".Helper::CLIENT_ID)->send();
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $apiHost);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($apiData));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $jsonData = curl_exec($ch);
+        curl_close($ch);
 
-        $result = $response->json();
+        return $jsonData;
+    }
 
+    public function auth()
+    {
+        $auth = new Instagram\Auth( $this->auth_config );
 
-        $instagram = new Instagram\Instagram;
-        $instagram->setAccessToken('644521835.cc217dd.7523cc03f06148ebac5ba79955a70a1f');
+        if(!isset($_GET['code'])) {
 
-        $current_user = $instagram->getCurrentUser();
+            $auth->authorize();
 
-        return View::make('popular', ['result' => $result['data'], 'current_user' => $current_user]);
+        } else {
+
+            Session::put('instagram_access_token', $auth->getAccessToken( $_GET['code'] ));
+        }
+        Session::put('instagram_access_token', $auth->getAccessToken( $_GET['code'] ));
     }
 
     public function login()
     {
-
-        $auth = new Instagram\Auth( $this->auth_config );
-
-        $auth->authorize();
-
-        Session::put('instagram_access_token', $auth->getAccessToken( $_GET['code'] ));
+        $this->auth();
 
         $this->show();
+    }
+
+    public function show()
+    {
+        if(!isset($_GET['code'])) {
+            $client = new Guzzle\Service\Client('https://api.instagram.com/');
+
+            $response = $client->get("v1/media/popular?client_id=".Helper::CLIENT_ID)->send();
+
+            $result = $response->json();
+
+            return View::make('popular', ['result' => $result['data']/*, 'current_user' => $current_user*/]);
+        }
+
+        $instagram = new Instagram\Instagram;
+
+        $json_auth_token = $this->getAccessToken($_GET['code']);
+
+        $auth_token = json_decode($json_auth_token);
+
+        $instagram->setAccessToken($auth_token->access_token);
+
+        $current_user = $instagram->getCurrentUser();
+
+        return View::make('popular', [/*'result' => $result['data'], */'current_user' => $current_user]);
+
+
     }
 } 
