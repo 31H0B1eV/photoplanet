@@ -23,6 +23,4 @@ Blade::setEscapedContentTags('<%%', '%%>'); 	// for escaped data
 
 Route::get('/', 'PopularController@show');
 
-Route::get('/users/authorize', array('as' => 'authorize', 'uses' => 'UsersController@getAuthorize'));
-Route::get('/login', array('as' => 'login', 'uses' => 'UsersController@getLogin'));
-Route::get('/logout', array('as' => 'logout', 'uses' => 'UsersController@getLogout'));
+Route::get('/login', 'PopularController@login');
