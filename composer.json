@@ -6,9 +6,7 @@
 	"require": {
 		"laravel/framework": "4.2.*",
         "barryvdh/laravel-ide-helper": "dev-master",
-		"guzzle/guzzle": "3.8.*",
-		"php-instagram-api/php-instagram-api": "dev-master",
-		"elevencodes/instagram-laravel": "dev-master"
+		"guzzle/guzzle": "3.8.*"
 	},
 	"autoload": {
 		"classmap": [
