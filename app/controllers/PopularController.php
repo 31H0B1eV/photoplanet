@@ -43,6 +43,15 @@ class PopularController extends BaseController {
         exit;
     }
 
+    public function logout()
+    {
+        unset($_COOKIE['instagram_access_token']);
+        setcookie("instagram_access_token", "", time()-3600);
+
+        header('Location: /');
+        exit;
+    }
+
     public function get_current_user()
     {
 
