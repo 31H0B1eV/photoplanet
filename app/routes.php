@@ -23,5 +23,8 @@ Blade::setEscapedContentTags('<%%', '%%>'); 	// for escaped data
 
 Route::get('/', 'PopularController@show');
 
+Route::get('/search', 'PopularController@search');
+Route::post('/search', 'PopularController@search');
+
 Route::get('/login', 'PopularController@login');
 Route::get('/logout', 'PopularController@logout');

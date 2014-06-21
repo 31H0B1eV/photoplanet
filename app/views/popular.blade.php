@@ -28,8 +28,6 @@ Photo Planet | Popular
 <!--            public 'id' => string '644521835' (length=9)-->
 
             @if(isset($current_user))
-                <h3 class="header pull-right">User Name is <small><% $current_user->username %></small></h3>
-
                 @include('includes.popular_with_user_login')
             @endif
 
