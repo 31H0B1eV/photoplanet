@@ -38,7 +38,7 @@ class PopularController extends BaseController {
     public function login()
     {
         header(
-"Location: https://instagram.com/oauth/authorize/?client_id=cc217dda7dda45178e1a83594eb7db8e&redirect_uri=http://photoplanet.dev:8000/&response_type=code"
+"Location: https://instagram.com/oauth/authorize/?client_id=cc217dda7dda45178e1a83594eb7db8e&redirect_uri=http://photoplanet-ua.herokuapp.com/&response_type=code"
         );
         exit;
     }
