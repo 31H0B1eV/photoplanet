@@ -1,28 +1,16 @@
-@foreach($result as $key=>$value)
-@if( $value['images']['standard_resolution']['url'] != '')
 <div class="row">
-
-    <div class="col-lg-1 col-md-1">
-        &nbsp
+    <div class="col-lg-9 col-md-9 pull-left">
+        <form role="form">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Enter search tag</label>
+                <input type="text" class="form-control" id="InputTag" placeholder="Enter search tag">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
     </div>
-
-    <div class="col-lg-5 col-md-5">
-        <a href="#" class="thumbnail">
-            <img src="<% $value['images']['standard_resolution']['url'] %>" class="img-responsive">
-        </a>
-    </div>
-
-    <div class="col-lg-5 col-md-5">
-        <h3><% $value['user']['full_name'] %></h3>
-        <img src="<% $value['user']['profile_picture'] %>" class="img-circle"><br />&nbsp
-        <p class="bg-info">Here must be comments from instagram</p>
-        <a class="glyphicon glyphicon-heart" href="#">&nbspLike it <!--<span class="glyphicon glyphicon-chevron-right"></span>--></a>
-    </div>
-
-    <div class="col-lg-1 col-md-1">
-        &nbsp
+    <div class="col-lg-3 col-md-3 pull-right">
+        <p class="text-right">&#35;<% $current_user->username %></p>
+        <img src="<% $current_user->profile_picture %>" class="img-responsive img-thumbnail pull-right">
     </div>
 </div>
-@endif
-
-@endforeach
+<hr />
