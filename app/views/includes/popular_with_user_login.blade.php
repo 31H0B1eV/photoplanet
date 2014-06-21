@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-9 col-md-9 pull-left">
 
-        <% Form::open(array('action' => '/search')) %>
+        <% Form::open() %>
         <div class="form-group">
             <% Form::label('search_tag', 'Search tag', array('class' => 'control_label')) %>
             <% Form::text('search_tag', null, array('class' => 'form-control')) %>
