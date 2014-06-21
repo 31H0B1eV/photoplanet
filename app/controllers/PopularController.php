@@ -90,4 +90,20 @@ class PopularController extends BaseController {
         return View::make('popular', ['result' => $result['data'],
             'current_user' => isset($_COOKIE['instagram_access_token']) ? $this->get_current_user() : null]);
     }
+
+    public function search()
+    {
+        if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['search_tag'] != '') {
+            $search_tag = trim(strip_tags($_POST['search_tag']));
+
+            $instagram = new Instagram\Instagram;
+            $instagram->setAccessToken($_COOKIE['instagram_access_token']);
+
+            $tags = $instagram->searchTags($search_tag);
+
+            return View::make('popular', ['tags' => $tags, 'current_user' => $this->get_current_user()]);
+        }
+
+        return View::make('popular', ['current_user' => $this->get_current_user()]);
+    }
 } 
